@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  ars_gui:
+    build: .
+    image: ars-gui-app
+    container_name: ars-gui
+    environment:
+      # For Linux this will be your actual display like ":0"
+      - DISPLAY=${DISPLAY:-:0}
+    volumes:
+      # Linux X11 socket, comment this out on macOS/Windows
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    # If using macOS/Windows, set DISPLAY to <host_ip>:0.0 and remove the volume above.
+    # Example:
+    # environment:
+    #   - DISPLAY=host.docker.internal:0.0
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    # On Linux, allowing local connections may be required:
+    #   $ xhost +local:root
+    restart: "no"
