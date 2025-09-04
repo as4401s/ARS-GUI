@@ -127,12 +127,6 @@ docker-compose up
 
 ---
 
-## Continuous Integration (optional)
-
-A sample `Jenkinsfile` is included as a starting point for CI builds. You’ll need to adapt registry credentials and, if headless testing is required, add a virtual display (e.g., Xvfb).
-
----
-
 ## License
 
 MIT
